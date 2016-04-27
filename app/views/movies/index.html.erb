@@ -1,4 +1,11 @@
+<% if current_user %>
+  <% if current_user.admin %>
+    <%= link_to "Admin page", '/admin/users/new' %>
+  <% end %>
+<% end %>
 <h1>Rotten Mangoes</h1>
+
+
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <% @movies.each do |movie| %>

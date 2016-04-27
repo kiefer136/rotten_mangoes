@@ -1,0 +1,15 @@
+<h1>Welcome to the admin page</h1><%= link_to "Back to all movies", movies_path %><HR>
+
+<%= paginate @users %>
+<% for user in @users  %>
+  <p>User: <%= user.firstname %><br>Email:<%= user.email %><br>
+  Admin?:<% if user.admin %>
+         <%= user.admin %>
+         <% else %>
+         False        
+         <% end %>
+  </p>
+<% end %>
+
+<hr>
+
