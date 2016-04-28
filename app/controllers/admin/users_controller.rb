@@ -6,7 +6,5 @@ class Admin::UsersController < ApplicationController
     else
       redirect_to movies_path, notice: "Gtfo you hacker!"
     end
-
   end
-
 end
