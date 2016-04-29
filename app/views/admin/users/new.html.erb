@@ -2,13 +2,17 @@
 
 <%= paginate @users %>
 <% for user in @users  %>
+
   <p>User: <%= user.firstname %><br>Email:<%= user.email %><br>
-  Admin?:<% if user.admin %>
+  Admin?<% if user.admin %>
          <%= user.admin %>
          <% else %>
          False        
          <% end %>
-  </p>
+         <p>
+         <%= user.id %>
+  </p><%= button_to "delete", admin_user_path(user), :method => :delete %>
+
 <% end %>
 
 <hr>

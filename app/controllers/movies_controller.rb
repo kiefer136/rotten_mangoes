@@ -11,9 +11,7 @@ class MoviesController < ApplicationController
     @movies = @movies.where("runtime_in_minutes < 90") if params[:runtime_in_minutes].to_i < 90 
     @movies = @movies.where("runtime_in_minutes >= 90 AND runtime_in_minutes <= 120") if params[:runtime_in_minutes].to_i >= 90 && params[:runtime_in_minutes].to_i <= 120
     @movies = @movies.where("runtime_in_minutes > 120") if params[:runtime_in_minutes].to_i > 120
-
-
-
+    
     # rim = params[:runtime_in_minutes].to_i
     # rim_conditional = nil
     # if rim < 90

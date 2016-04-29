@@ -25,7 +25,7 @@ class Movie < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def review_average
-    if reviews.size > 0
+    if !reviews.empty?
       reviews.sum(:rating_out_of_ten)/reviews.size
     else
       0
